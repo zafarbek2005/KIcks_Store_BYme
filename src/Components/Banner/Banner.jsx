@@ -26,7 +26,7 @@ const Banner = () => {
       transition={{ duration: 0.8 }}
     >
       <motion.div
-        className="banner_txt"
+        className="banner_txt11"
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.2 }}
@@ -39,7 +39,7 @@ const Banner = () => {
         modules={[Navigation, Pagination, Autoplay]}
         navigation
         pagination={{ clickable: true }}
-        autoplay={{ delay: 3000 }}
+        autoplay={{ delay: 5000 }}
         loop
         className="swiper_container"
       >
