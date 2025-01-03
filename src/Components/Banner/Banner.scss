@@ -1,0 +1,177 @@
+.banner_slider {
+    .swiper_container {
+      width: 100%;
+      max-width: 1320px;
+      height: 750px;
+      border-radius: 15px;
+      overflow: hidden;
+      margin: 0 auto;
+    //   margin-top: 23px;
+  
+      @media (max-width: 768px) {
+        height: 500px;
+        margin-top: -45px;
+      }
+  
+      @media (max-width: 480px) {
+        height: 350px;
+        width: 95%;
+        margin-top: -65px;
+      }
+    }
+  
+    .banner_slide {
+      height: 100%;
+      display: flex;
+      align-items: flex-end; 
+      justify-content: flex-start; 
+      color: white;
+  
+      .banner_content {
+        margin: 0 20px 40px; 
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+  
+        h3 {
+          font-size: 3rem;
+          font-family: Rubik, sans-serif;
+          font-weight: bold;
+          margin-bottom: 10px;
+  
+          @media (max-width: 768px) {
+            font-size: 2rem;
+          }
+  
+          @media (max-width: 480px) {
+            font-size: 1.5rem;
+          }
+        }
+  
+        p {
+          font-size: 1.2rem;
+          margin-bottom: 20px;
+  
+          @media (max-width: 768px) {
+            font-size: 1rem;
+          }
+  
+          @media (max-width: 480px) {
+            font-size: 0.9rem;
+          }
+        }
+  
+        button {
+          padding: 12px 24px;
+          background-color: #4a69e2;
+          border: none;
+          border-radius: 8px;
+          color: white;
+          font-size: 1rem;
+          font-family: Rubik, sans-serif;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+  
+          &:hover {
+            background-color: #3a58c1;
+          }
+  
+          @media (max-width: 480px) {
+            font-size: 0.9rem;
+            padding: 10px 20px;
+          }
+        }
+      }
+    }
+  
+    .swiper-pagination-bullet {
+      background: white; 
+      opacity: 0.8;
+  
+      &.swiper-pagination-bullet-active {
+        background: #4a69e2;
+      }
+    }
+  
+    .swiper-button-next,
+    .swiper-button-prev {
+      background: white;
+      color: black;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      @media (max-width: 480px) {
+       display: none;
+      }
+      &:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+      }
+  
+      &::after {
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+    }
+  
+    .swiper-button-next {
+      right: 15px;
+    }
+  
+    .swiper-button-prev {
+      left: 15px;
+    }
+  }
+  
+.banner_txt{
+    text-align: center;
+    margin-top: 23px;
+     h3{
+        font-family: Rubik;
+        font-size: clamp(1.5rem, 25vw, 223px);
+        font-weight: 700;
+        line-height: 264.85px;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+        color: Dark Gray;
+        text-transform: uppercase;
+     }
+     #banner_txt{
+        background: 0;
+        font-family: Rubik;
+        font-size: clamp(1.5rem, 25vw, 223px);
+        font-weight: 700;
+        line-height: 264.85px;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+        color: #3a58c1;
+     }
+     @media (max-width: 1300px) {
+        margin-top: -45px;
+        h3{
+            font-family: Rubik;
+            font-size: clamp(1.5rem, 15vw, 223px);
+            font-weight: 700;
+            line-height: 264.85px;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            color: Dark Gray;
+            text-transform: uppercase;
+         }
+         #banner_txt{
+            background: 0;
+            font-family: Rubik;
+            font-size: clamp(1.5rem, 15vw, 223px);
+            font-weight: 700;
+            line-height: 264.85px;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            color: #3a58c1;
+         }
+      }
+}
