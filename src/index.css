@@ -16,3 +16,23 @@
     padding: 0 20px; 
     
 }
+
+
+
+.loader {
+    width: fit-content;
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 32px;
+    clip-path: inset(0 100% 0 0);
+    animation: l5 2s steps(11) infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+  }
+  .loader:before {
+    content:"Loading..."
+  }
+  @keyframes l5 {to{clip-path: inset(0 -1ch 0 0)}}

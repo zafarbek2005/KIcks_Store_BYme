@@ -99,3 +99,46 @@ header.active {
     display: none !important;
   }
 }
+
+
+/// night mode 
+
+
+
+body.night-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.Navbar {
+  background-color: #fff;
+  &.night-mode {
+    background-color: #1e1e1e !important;
+  }
+}
+
+.bottom_appbar {
+  background-color: #fff;
+  &.night-mode {
+    background-color: #333;
+  }
+
+  a {
+    color: #232321;
+    &.active {
+      color: #fff;
+    }
+
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+#night_mode {
+  cursor: pointer;
+}
+
+.night-mode {
+  color: #fff;
+}

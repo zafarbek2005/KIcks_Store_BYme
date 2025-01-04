@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from './Components/Navbar/Navbar'
 import Home from './Components/Home/Home'
 import { Route, Routes, useLocation } from 'react-router-dom';
+import NotFound from './Pages/NotFound/NotFound';
 
 const App = () => {
 
@@ -22,7 +23,7 @@ const App = () => {
    
    <Routes>
         <Route path='/' element={<Home />} />
-
+        <Route path='*' element={<NotFound />} />
         
 
         {/* <Route path="/" element={<Auth />}>
