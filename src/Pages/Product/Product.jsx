@@ -93,7 +93,7 @@ const Product = ({ catigoryData, data, isError, isLoading, isSuccess, isFetching
                 </div>
                 <h3 title={product?.title}>{product?.title}</h3>
                 <button>
-                  View Product -<mark id="product_price"> ${product?.price}</mark>
+                  View Product - <mark id="product_price"> ${product?.price}</mark>
                 </button>
               </motion.div>
             ))}

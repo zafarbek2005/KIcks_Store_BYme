@@ -9,7 +9,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-
+  margin-top: 20px;
    h3{
     font-family: Rubik;
     font-size: 64px;
@@ -26,6 +26,82 @@
     background: #4A69E2;
     color: #fff;
     border: none;
+
+      &:hover{
+        background-color: #6a85e9;
+      }
+   }
+   @media(max-width:768px){
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+     h3{
+      font-family: Rubik;
+      font-size: 32px !important;
+      font-weight: 600;
+      text-underline-position: from-font;
+      text-decoration-skip-ink: none;
+  
+     }
+     button{
+    width: 200px !important;
+      height: 48px;
+      padding: 10px 32px 10px 32px;
+      border-radius: 8px;
+      background: #4A69E2;
+      color: #fff;
+      border: none;
+      font-size: 14px !important;
+     }
+   }
+   @media(max-width:480px){
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+     h3{
+      font-family: Rubik;
+      font-size: 24px !important;
+      font-weight: 600;
+      text-underline-position: from-font;
+      text-decoration-skip-ink: none;
+  
+     }
+     button{
+    width: 140px !important;
+      height: 48px;
+      padding: 10px 32px 10px 32px;
+      border-radius: 8px;
+      background: #4A69E2;
+      color: #fff;
+      border: none;
+      font-size: 14px !important;
+     }
+   }
+   @media(max-width:320px){
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+     h3{
+      font-family: Rubik;
+      font-size: 16px !important;
+      font-weight: 600;
+      text-underline-position: from-font;
+      text-decoration-skip-ink: none;
+  
+     }
+     button{
+    width: 130px !important;
+      height: 48px;
+      padding: 10px 32px 10px 32px;
+      border-radius: 8px;
+      background: #4A69E2;
+      color: #fff;
+      border: none;
+      font-size: 14px !important;
+     }
    }
 }
 
@@ -33,7 +109,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     margin-top: 52px;
-    
+    justify-items: center;
   }
   
   .cart {
@@ -43,7 +119,7 @@
     gap: 16px;
     position: relative;
     overflow: hidden;
-  
+      
     h3 {
       font-family: Rubik;
       font-size: 24px;
@@ -80,13 +156,13 @@
       position: relative;
       width: 100%;
       height: 300px;
-      background: #e6e6e6;
+      background: #ecedef;
       border-radius: 24px;
       display: flex;
       justify-content: center;
       align-items: center;
-      border: 5px solid #fff;
-  
+      border: 5px solid #232321;
+      
       img {
         max-width: 100%;
         width: 100%;
@@ -122,48 +198,46 @@
       }
     }
   }
-  
   .modal {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.9); // Darker background for better contrast
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
   
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: -1;
-    }
-  
     .slider {
       position: relative;
-      width: 80%;
-      max-width: 600px;
+      width: 90%;
+      max-width: 700px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
   
       .modal-img-wrapper {
-        background: white;
-        padding: 20px;
+        width: 100%;
+        max-height: 500px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
         display: flex;
         justify-content: center;
         align-items: center;
-        border-radius: 10px;
   
         img {
           width: 100%;
           height: auto;
-          max-width: 500px;
-          transition: transform 0.3s ease;
+          max-height: 100%;
+          transition: transform 0.4s ease-in-out;
         }
       }
   
@@ -172,23 +246,45 @@
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        background: none;
-        border: none;
-        font-size: 30px;
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+        background: rgba(0, 0, 0, 0.7);
         color: #fff;
+        border-radius: 50%;
+        border: none;
         cursor: pointer;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: background 0.3s, transform 0.2s;
   
         &:hover {
-          color: #aaa;
+          background: rgba(0, 0, 0, 0.9);
+          transform: scale(1.1);
         }
       }
   
       .prev {
-        left: 10px;
+        left: 15px;
       }
   
       .next {
-        right: 10px;
+        right: 15px;
+      }
+    }
+  
+    @media (max-width: 768px) {
+      .slider {
+        max-width: 95%;
+  
+        .prev,
+        .next {
+          width: 40px;
+          height: 40px;
+          font-size: 20px;
+        }
       }
     }
   }
@@ -207,8 +303,8 @@
     }
   
     .cart {
-      width: 90%;
-      height: auto;
+      width: 95%;
+      height: 400px;
     }
   
     .cart_img {
@@ -236,7 +332,7 @@
     }
   
     .cart_img {
-      height: 150px !important;
+      height: 180px !important;
     }
   
     h3 {
@@ -245,19 +341,20 @@
   
     button {
       width: 100%;
-      height: 45px !important;
-    }
+      font-size: 12px !important;
+      
+        }
   }
   
   @media (max-width: 320px) {
     .product_carts {
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(2, 1fr);
       gap: 10px;
     }
   
     .cart {
       width: 100%;
-      height: auto;
+      height: 280px !important;
     }
   
     .cart_img {
@@ -265,12 +362,13 @@
     }
   
     h3 {
-      font-size: 16px;
+      font-size: 14px !important;
     }
   
     button {
       width: 100%;
       height: 40px;
+      font-size: 8px !important;
     }
   }
   
