@@ -154,7 +154,7 @@
         margin-top: -45px;
         h3{
             font-family: Rubik;
-            font-size: clamp(1.5rem, 15vw, 223px);
+            font-size: clamp(1.5rem, 15vw, 223px) ;
             font-weight: 700;
             line-height: 264.85px;
             text-underline-position: from-font;
@@ -166,6 +166,29 @@
             background: 0;
             font-family: Rubik;
             font-size: clamp(1.5rem, 15vw, 223px);
+            font-weight: 700;
+            line-height: 264.85px;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            color: #3a58c1;
+         }
+      }
+     @media (max-width: 480px) {
+        margin-top: -45px;
+        h3{
+            font-family: Rubik;
+            font-size: clamp(1.5rem, 15vw, 223px) !important ;
+            font-weight: 700;
+            line-height: 264.85px;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            color: Dark Gray;
+            text-transform: uppercase;
+         }
+         #banner_txt{
+            background: 0;
+            font-family: Rubik;
+            font-size: clamp(1.5rem, 15vw, 223px) !important;
             font-weight: 700;
             line-height: 264.85px;
             text-underline-position: from-font;

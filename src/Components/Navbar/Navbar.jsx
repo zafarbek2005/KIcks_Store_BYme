@@ -1,16 +1,13 @@
-import React, { memo, useState, useEffect } from 'react';
+import React, { memo, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { Link, useLocation } from 'react-router-dom';
 import './Navbar.scss';
-import { Link } from 'react-router-dom';
 import logo from '../../images/Logo.svg';
-import { IoSearch, IoPersonSharp, IoMenu, IoClose } from 'react-icons/io5';
+import { IoHome, IoCart, IoHeart, IoPersonSharp } from 'react-icons/io5';
+import { MdExplore, MdNotificationsActive } from "react-icons/md";
 
 const Navbar = () => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
-  const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
-  };
+  const location = useLocation(); // Get the current route
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,49 +32,52 @@ const Navbar = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="menu_icon" onClick={toggleSidebar}>
-            <IoMenu />
-          </div>
-          <div className="nav_items">
-            <Link to="/">New Drops 🔥</Link>
-            <select name="men" id="men">
-              <option value="/">Shoes</option>
-              <option value="/men-shoes">Men</option>
-              <option value="/men-clothing">Clothing</option>
-            </select>
-            <select name="women" id="women">
-              <option value="/">Shoes</option>
-              <option value="/women-shoes">Women</option>
-              <option value="/women-clothing">Clothing</option>
-            </select>
-          </div>
-          <div className="logo">
-            <img src={logo} alt="Logo" />
-          </div>
-          <div className="nav_icons">
-            <IoSearch />
-            <IoPersonSharp />
-            <button>Z</button>
+          <Link to="/">
+            <div className="logo">
+              <img src={logo} alt="Logo" />
+            </div>
+          </Link>
+          <div  className="nav_icons">
+            <Link id='none_header' to="/cart">
+              <IoCart />
+            </Link>
+            <Link id='none_header' to="/favorites">
+              <IoHeart />
+            </Link>
+            <Link id='none_header' to="/profile">
+              <IoPersonSharp />
+            </Link>
+            <Link>
+              <MdNotificationsActive />
+            </Link>
           </div>
         </motion.div>
       </header>
 
-      <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
-        <div className="close_icon" onClick={toggleSidebar}>
-          <IoClose />
-        </div>
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/men-shoes">Men Shoes</Link></li>
-          <li><Link to="/women-shoes">Women Shoes</Link></li>
-          <li><Link to="/about">About</Link></li>
-        </ul>
-      </div>
+      {/* Bottom App Bar */}
 
-      <div
-        className={`overlay ${isSidebarOpen ? 'visible' : ''}`}
-        onClick={toggleSidebar}
-      ></div>
+      <div className="bottom_appbar">
+        <Link to="/" className={location.pathname === '/' ? 'active' : ''}>
+          <IoHome />
+          <span>Home</span>
+        </Link>
+        <Link to="/explore" className={location.pathname === '/explore' ? 'active' : ''}>
+          <MdExplore />
+          <span>Explore</span>
+        </Link>
+        <Link to="/cart" className={location.pathname === '/cart' ? 'active' : ''}>
+          <IoCart />
+          <span>Cart</span>
+        </Link>
+        <Link to="/favorites" className={location.pathname === '/favorites' ? 'active' : ''}>
+          <IoHeart />
+          <span>Like</span>
+        </Link>
+        <Link to="/profile" className={location.pathname === '/profile' ? 'active' : ''}>
+          <IoPersonSharp />
+          <span>Profile</span>
+        </Link>
+      </div>
     </>
   );
 };
