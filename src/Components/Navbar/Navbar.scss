@@ -65,36 +65,34 @@ header.active {
     justify-content: center;
     text-decoration: none;
     color: #232321;
-    font-size: 12px;
+    font-size: 14px;
 
     svg {
-      font-size: 24px;
+      font-size: 26px;
     }
 
     span {
       margin-top: 4px;
-    }
-
-    &:hover {
       color: #000;
     }
 
+ 
     &.active {
       color: #000;
       font-weight: bold;
-      opacity: .6;
       svg {
         color: #000; 
-        opacity: .6;
+        opacity: .6; 
       }
+    
     }
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 968px) {
     display: none;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 968px) {
   #none_header{
     display: none !important;
   }
